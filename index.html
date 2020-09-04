@@ -58,11 +58,21 @@
 	</script>
 	-->
 
-	<!-- Ejercicio 7 Cambiar ancho priemr elemeto -->
+	<!-- Ejercicio 7 Cambiar ancho primer elemeto --
 	<script>
 		$(document).ready(() => {
 			//console.log("jQuery loaded");
 			$('.super_div div:first-child').css({ "width": "10%" });
+		});
+	</script>
+	-->
+
+	<!-- Ejercicio 8 Cambiar ancho y color del segundo elemeto -->
+	<script>
+		$(document).ready(() => {
+			//console.log("jQuery loaded");
+			$('.mini_div').eq(1).css({ "width": "10%" });
+			$('.mini_div').eq(1).css({ "background": "white" });
 		});
 	</script>
 	
