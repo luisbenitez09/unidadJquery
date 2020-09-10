@@ -46,9 +46,9 @@
 					<legend>Datos del formulario</legend>
 
 					<label>
-						Añadir clase:
+						Escribe en el input:
 					</label>
-					<input  type="text" id="input" name="" value="10">
+					<input  type="text" id="input" name="" value="escribe aquí">
 
 					 
 				</fieldset> 
@@ -57,17 +57,18 @@
 			</form>
 		</div>
 		
-	</div>	
+	</div>
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script>
 		$(window).on("load", function () {
-			function bye() {
-				$("#input").val("");
+			function holi() {
+				if ($("#input").val() === "") {
+					$("#input").val("Por algo carnal");
+				}
 			}
-			$('#input').focus(bye);
+			$('#input').blur(holi);
 		});
 	</script>
-
-</script>
+ 
 </body>
 </html>
