@@ -29,22 +29,40 @@
 	<div class="super_div">
 		<h1>Aquí no hay nada</h1>
 		<center>
-			<input type="text" style="width: 20%;height: 40px;" name="" id="primer_numero" value="" placeholder="">
-			<input type="text" style="width: 20%;height: 40px;" name="" id="segundo_numero" value="" placeholder="">
+			<input type="text" style="width: 20%;height: 40px;" name="" id="n1" value="" placeholder="">
+			<input type="text" style="width: 20%;height: 40px;" name="" id="n2" value="" placeholder="">
 			<br>
-			<button> suma dos numeros </button>
+			<button id="btn"> suma dos numeros </button>
 		</center>
 		<h1 id="edad_h1">  </h1>
 	</div>
 
   
 
-<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script src="js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
-	
-	  
-	 
+	$(window).on("load", function () {
+		$('#btn').click(function () {
+			var num1 = $("#n1").val();
+			var num2 = $("#n2").val();
+			console.log(num1, num2);
+			$.ajax({
+				url: 'calcu.php',
+				data: {
+					n1: num1,
+					n2: num2
+				},
+				type: 'POST',
+				dataType: 'text',
+				success: function (r) {
+					console.log(r);
+					$('#edad_h1').text(r)
+				}
 
+			});
+
+		})
+	});
 </script>
 </body>
 </html>
