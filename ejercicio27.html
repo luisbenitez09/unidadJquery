@@ -46,7 +46,7 @@
 			var num1 = $("#n1").val();
 			var num2 = $("#n2").val();
 			console.log(num1, num2);
-			$.ajax({
+			var request = $.ajax({
 				url: 'calcu.php',
 				data: {
 					n1: num1,
@@ -54,11 +54,13 @@
 				},
 				type: 'POST',
 				dataType: 'text',
-				success: function (r) {
-					console.log(r);
-					$('#edad_h1').text(r)
-				}
+			});
 
+			request.done(function(data) {
+				console.log("Todo ok");
+			});
+			request.fail(function(data) {
+				console.log("fail");
 			});
 
 		})
